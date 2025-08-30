@@ -1,79 +1,193 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Dillikumar Personal Site</title>
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dillikumar Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .text-gradient-purple {
+            background-image: linear-gradient(to right, #6a0572, #ab53e8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-blue {
+            background-image: linear-gradient(to right, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gradient-purple {
+            background-image: linear-gradient(135deg, #6a0572 0%, #ab53e8 100%);
+        }
+        .bg-gradient-blue {
+            background-image: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+        }
+        .shadow-custom {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
 
-  <body>
-    <table cellspacing="20">
-      <tr>
-        <td><img src="images/profile.png"width="150" alt="dillikumar profile picture"></td>
-        <td><h1><strong>Dillikumar N</strong></h1>
-        <p>Software Developer at <a href="www.google.com"><strong>Google</strong></a></p>
-        <p>I am a Devops Engineer, Programmer and Web Developer. I love to Eat Veggies❤️</p></td>
-      </tr>
-    </table>
-    <hr>
-    <h3>Books and Learning</h3>
-    <ul>
-      <li>The 100 days of programming in python bootcamp</li>
-      <li>Programming in java</li>
-      <li>Introduction to Algorithm</li>
-    </ul>
-    <hr>
-    <h3>Course Works</h3>
-    <table cellspacing="10">
-      <thead>
-        <tr>
-          <th>Time</th>
-          <th>Work</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2023</td>
-          <td>NPTEL - Programming in java</td>
-        </tr>
-        <tr>
-          <td>2024-2025</td>
-          <td>100 Days of Code: The Complete Python Pro Bootcamp</td>
-        </tr>
-        <tr>
-          <td>2025</td>
-          <td>Software Developer - I @ <a href="www.google.com"><strong>Google</strong></a></td>
-        </tr>
-      </tbody>
-    </table>
-    <hr>
-    <h3>Skills</h3>
-    <table cellspacing="10">
-      <tr>
-        <td>Android Development</td>
-        <td>⭐️⭐️⭐️⭐️⭐️</td>
-      </tr>
-      <tr>
-        <td>Web Development</td>
-        <td>⭐️⭐️⭐️⭐️</td>
-      </tr>
-       <tr>
-        <td>Programming</td>
-        <td>⭐️⭐️⭐️⭐️⭐️</td>
-      </tr>
-      <tr>
-        <td>Cooking</td>
-        <td>⭐️⭐️⭐️</td>
-      </tr>
-    </table>
-    <hr>
-    <a href="hobbies.html">My Hobbies</a> <span></span>
-    <a href="contact-me.html">Contact Me</a>
-    <p>See Me on! 👇</p>
-    👉<a href="https://leetcode.com/u/Dillikumarnl/">LeetCode</a>
-    👉<a href="https://github.com/Dillikumarnl">GitHub</a>
-    👉<a href="https://www.linkedin.com/in/dillikumarnl/">LinkedIn</a>
-    <hr>
-    <p align="center">Bye👋</p>
-  </body>
+    <!-- Header & Navigation -->
+    <header class="bg-gray-800 bg-opacity-50 backdrop-blur-md sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-wide text-gradient-purple">
+                Portfolio
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-purple-400 transition-colors duration-300">About</a>
+                <a href="#projects" class="hover:text-purple-400 transition-colors duration-300">Projects</a>
+                <a href="#skills" class="hover:text-purple-400 transition-colors duration-300">Skills</a>
+                <a href="#contact" class="hover:text-purple-400 transition-colors duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">About</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Projects</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Skills</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-12">
+        <!-- Hero Section -->
+        <section id="hero" class="container mx-auto px-6 mb-24">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight text-white mb-4">
+                        Hello, I'm <span class="text-gradient-blue">Dillikumar N</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-400 mb-6">
+                        A passionate <span class="text-gradient-purple">Backend Engineer</span> specializing in designing and building scalable systems.
+                    </p>
+                    <a href="#projects" class="inline-block bg-gradient-purple px-8 py-3 rounded-full text-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
+                        View My Work
+                    </a>
+                </div>
+                <div class="md:w-1/2 flex justify-center md:justify-end">
+                    <img src="./images/profile.png" alt="Profile Picture" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-purple-500 shadow-custom">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="container mx-auto px-6 mb-24">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gradient-purple">About Me</h2>
+            <div class="bg-gray-800 rounded-2xl p-8 shadow-custom">
+                <p class="text-lg md:text-xl text-gray-300 text-center">
+                    I am a backend engineer with expertise in building robust, scalable, and secure server-side applications. My focus is on designing efficient APIs, managing databases, and deploying services on the cloud. I have experience with Python, Node.js, and a variety of cloud platforms, and I thrive on solving complex problems. When I'm not coding, I enjoy learning about system architecture and contributing to open-source projects.
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="container mx-auto px-6 mb-24">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gradient-blue">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-gray-800 rounded-2xl p-6 shadow-custom transform transition-transform duration-300 hover:scale-105">
+                    <img src="https://placehold.co/600x400/1e293b/d1d5db?text=Project+1" alt="Project 1" class="rounded-xl mb-4 w-full">
+                    <h3 class="text-2xl font-semibold mb-2 text-gradient-purple">RESTful E-commerce API</h3>
+                    <p class="text-gray-400 mb-4">A backend API built with Python/Flask to handle product catalog, user authentication, and order processing.</p>
+                    <a href="#" class="inline-block bg-gradient-blue px-6 py-2 rounded-full text-sm font-medium text-white">View Project</a>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-gray-800 rounded-2xl p-6 shadow-custom transform transition-transform duration-300 hover:scale-105">
+                    <img src="https://placehold.co/600x400/1e293b/d1d5db?text=Project+2" alt="Project 2" class="rounded-xl mb-4 w-full">
+                    <h3 class="text-2xl font-semibold mb-2 text-gradient-purple">Real-time Chat Application</h3>
+                    <p class="text-gray-400 mb-4">A Node.js and WebSocket-based server that enables real-time messaging between users.</p>
+                    <a href="#" class="inline-block bg-gradient-blue px-6 py-2 rounded-full text-sm font-medium text-white">View Project</a>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="bg-gray-800 rounded-2xl p-6 shadow-custom transform transition-transform duration-300 hover:scale-105">
+                    <img src="https://placehold.co/600x400/1e293b/d1d5db?text=Project+3" alt="Project 3" class="rounded-xl mb-4 w-full">
+                    <h3 class="text-2xl font-semibold mb-2 text-gradient-purple">Scalable Microservices</h3>
+                    <p class="text-gray-400 mb-4">An example of a microservices architecture using Docker and orchestrated with a lightweight framework.</p>
+                    <a href="#" class="inline-block bg-gradient-blue px-6 py-2 rounded-full text-sm font-medium text-white">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="container mx-auto px-6 mb-24">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gradient-purple">My Skills</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <script>for </script>
+                <span class="bg-gray-800 rounded-full px-6 py-2 text-lg font-medium text-gray-300 shadow-custom">Python</span>
+                <span class="bg-gray-800 rounded-full px-6 py-2 text-lg font-medium text-gray-300 shadow-custom">Java</span>
+                <span class="bg-gray-800 rounded-full px-6 py-2 text-lg font-medium text-gray-300 shadow-custom">Java(Type) Script</span>
+                <span class="bg-gray-800 rounded-full px-6 py-2 text-lg font-medium text-gray-300 shadow-custom">Spring</span>
+                <span class="bg-gray-800 rounded-full px-6 py-2 text-lg font-medium text-gray-300 shadow-custom">React</span>
+                <span class="bg-gray-800 rounded-full px-6 py-2 text-lg font-medium text-gray-300 shadow-custom">Flask</span>
+                <span class="bg-gray-800 rounded-full px-6 py-2 text-lg font-medium text-gray-300 shadow-custom">MongoDB</span>
+                <span class="bg-gray-800 rounded-full px-6 py-2 text-lg font-medium text-gray-300 shadow-custom">PostgreSQL</span>
+                <span class="bg-gray-800 rounded-full px-6 py-2 text-lg font-medium text-gray-300 shadow-custom">MySQL</span>
+                <span class="bg-gray-800 rounded-full px-6 py-2 text-lg font-medium text-gray-300 shadow-custom">REST APIs</span>
+                <span class="bg-gray-800 rounded-full px-6 py-2 text-lg font-medium text-gray-300 shadow-custom">Docker</span>
+                <span class="bg-gray-800 rounded-full px-6 py-2 text-lg font-medium text-gray-300 shadow-custom">AWS</span>
+            </div>
+        </section>
+
+           <!-- Contact Section -->
+        <section id="contact" class="container mx-auto px-6 mb-24">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gradient-blue">Connect with Me</h2>
+            <div class="bg-gray-800 rounded-2xl p-8 max-w-lg mx-auto shadow-custom flex justify-center gap-6 flex-wrap">
+                <a href="https://github.com/Dillikumarnl" target="_blank" class="bg-gradient-black px-8 py-3 rounded-full text-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
+                    GitHub
+                </a>
+                <a href="https://linkedin.com/in/dillikumarnl" target="_blank" class="bg-gradient-black px-8 py-3 rounded-full text-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
+                    LinkedIn
+                </a>
+                <a href="https://leetcode.com/dillikumarnl" target="_blank" class="bg-gradient-purple px-8 py-3 rounded-full text-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
+                    LeetCode
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 bg-opacity-50 py-8 text-center text-gray-500 border-t border-gray-700">
+        <p>&copy; 2025 Dillikumar. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
 </html>
